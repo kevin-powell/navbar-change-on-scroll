@@ -8,4 +8,4 @@ To use the build, you need npm and gulp installed first.
 
 Once they are installed, in the command line, first type in `npm install`.
 
-When the installation is finished, type "gulp watch" to get started.
+When the installation is finished, type `gulp watch` to get started.
