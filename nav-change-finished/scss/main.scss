@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.site-logo {
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+header {
+  --text: #f4f4f4;
+  --text-inverse: #333;
+  --background: transparent;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 3em;
+  transition: background 250ms ease-in;
+  background: var(--background);
+  color: var(--text);
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav__link {
+  --spacing: 1em;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  padding: calc(var(--spacing) / 2) var(--spacing);
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: var(--spacing);
+    right: var(--spacing);
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transition: transform 150ms ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &--btn {
+    border: 1.5px solid currentColor;
+    border-radius: 2em;
+    margin-left: 1em;
+    transition: background 250ms ease-in-out;
+    letter-spacing: 1px;
+    padding: 0.75em 1.5em;
+
+    &:hover {
+      background: var(--text);
+      color: var(--text-inverse);
+      border-color: var(--text);
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &--highlight {
+      background: limegreen;
+      border-color: limegreen;
+      color: #333;
+
+      &:hover {
+        background: var(--text);
+        border-color: var(--text);
+      }
+    }
+  }
+}
+
+.nav-scrolled {
+  --text: #333;
+  --text-inverse: #f4f4f4;
+  --background: #f4f4f4;
+
+  box-shadow: 0 3px 20px rgba(black, 0.2);
+}
+
+.home-intro {
+  padding: 50vh 0;
+  background: #123 url(//unsplash.it/900);
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: white;
+  text-align: center;
+}
+
+.home-about {
+  padding: 4em 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.columns {
+  display: flex;
+}
+
+.col + .col {
+  margin-left: 1.5em;
+}
+
+.more-stuff-grid {
+  background: #f4f4f4;
+  padding: 4em 0;
+  display: grid;
+  grid-gap: 2em;
+  align-items: center;
+  grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(200px, 400px)) minmax(
+      1em,
+      1fr
+    );
+}
+
+.from-left {
+  grid-column: 2 / 3;
+}
+
+.from-right {
+  grid-column: 3 / 4;
+}
